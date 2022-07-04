@@ -1,6 +1,6 @@
 ## Introduction
 
-This is the code base for paper: **Generalizable Medical Image Segmentation via Random Amplitude Mixup and Domain Specific Image Restoration**.
+This is the code base for our ECCV 2022 paper: **Generalizable Medical Image Segmentation via Random Amplitude Mixup and Domain Specific Image Restoration**.
 
 ## Data Preparation
 
