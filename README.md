@@ -18,7 +18,7 @@ cd RAM-DSIR
 ```
 
 ### Download Dataset
-Download dataset [Fundus](https://github.com/emma-sjwang/Dofe) and put them in ```./dataset/fundus/```
+Download dataset [Fundus](https://github.com/emma-sjwang/Dofe) and put images in ```./dataset/fundus/```
 
 
 ### Training and Testing
