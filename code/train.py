@@ -77,6 +77,11 @@ def parse_args():
 domain_list = ['ISBI', 'ISBI_1.5', 'I2CVB', 'UCL', 'BIDMC', 'HK']
 
 
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
+
 def KD(input, target):
     consistency_criterion = KLDivLoss()
     loss_consistency = consistency_criterion(input, target) + consistency_criterion(target, input)
@@ -543,7 +548,7 @@ def main(args):
         trainset = dataset_zoo[args.dataset](base_dir=data_root, split='train',
                             domain_idx_list=[i], transform=transform[args.dataset], is_out_domain=args.is_out_domain, test_domain_idx=args.test_domain_idx)
         trainloader = DataLoader(trainset, batch_size=batch_size_list[args.dataset][idx], num_workers=8,
-                             shuffle=True, drop_last=True, pin_memory=True)
+                             shuffle=True, drop_last=True, pin_memory=True, worker_init_fn=seed_worker)
         dataloader_list.append(cycle(trainloader))
         if dataloader_length_max < len(trainloader):
             dataloader_length_max = len(trainloader)
