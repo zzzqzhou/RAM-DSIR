@@ -3,7 +3,7 @@ by [Ziqi Zhou](https://zzzqzhou.github.io/), [Lei Qi](http://palm.seu.edu.cn/qil
 
 ## Introduction
 
-This repository is for our ECCV 2022 paper: **Generalizable Medical Image Segmentation via Random Amplitude Mixup and Domain Specific Image Restoration**.
+This repository is for our ECCV 2022 paper: **[Generalizable Medical Image Segmentation via Random Amplitude Mixup and Domain Specific Image Restoration](https://arxiv.org/pdf/2208.03901.pdf)**.
 
 ![](./pics/eccv22_ram-dsir.PNG)
 
