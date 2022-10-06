@@ -18,7 +18,12 @@ cd RAM-DSIR
 ```
 
 ### Download Dataset
+
+#### Fundus
 Download dataset [Fundus](https://drive.google.com/file/d/1p33nsWQaiZMAgsruDoJLyatoq5XAH-TH/view) (Provided by [DoFE](https://github.com/emma-sjwang/Dofe)) and put images in ```./dataset/fundus/```
+
+#### Prostate
+Download our pre-processed dataset [Prostate](https://drive.google.com/file/d/1-SCjNklFEAq7MlBwcw2ZNR179JqlOubL/view) (Originally Provided by [SAML](https://liuquande.github.io/SAML/)) and put data in ```./dataset/prostate/```
 
 
 ### Training and Testing
