@@ -84,7 +84,7 @@ def seed_worker(worker_id):
 
 def KD(input, target):
     consistency_criterion = KLDivLoss()
-    loss_consistency = consistency_criterion(input, target) + consistency_criterion(target, input)
+    loss_consistency = consistency_criterion(input.log(), target) + consistency_criterion(target.log(), input)
     return loss_consistency
 
 
