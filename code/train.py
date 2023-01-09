@@ -195,8 +195,6 @@ def test_prostate(encoder, seg_decoder, epoch, data_dir, datasetTest, output_pat
 def train_fundus(trainloader_list, encoder, seg_decoder, rec_decoder, writer, args, optimizer, dataloader_length_max, domain_idx_list, batch_size_list):
     if args.consistency_type == 'mse':
         consistency_criterion = MSELoss()
-    elif args.consistency_type == 'kl':
-        consistency_criterion = KLDivLoss()
     elif args.consistency_type == 'kd':
         consistency_criterion = KD
     else:
@@ -359,8 +357,6 @@ def train_fundus(trainloader_list, encoder, seg_decoder, rec_decoder, writer, ar
 def train_prostate(trainloader_list, encoder, seg_decoder, rec_decoder, writer, args, optimizer, dataloader_length_max, domain_idx_list, batch_size_list):
     if args.consistency_type == 'mse':
         consistency_criterion = MSELoss()
-    elif args.consistency_type == 'kl':
-        consistency_criterion = KLDivLoss()
     elif args.consistency_type == 'kd':
         consistency_criterion = KD
     else:
