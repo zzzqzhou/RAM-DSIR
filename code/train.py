@@ -287,7 +287,13 @@ def train_fundus(trainloader_list, encoder, seg_decoder, rec_decoder, writer, ar
             optimizer.step()
 
             lr = args.lr * (1 - iter_num / total_iters) ** 0.9
-            optimizer.param_groups[0]["lr"] = lr
+            if args.rec:
+                optimizer.param_groups[0]["lr"] = lr / 2
+                optimizer.param_groups[1]["lr"] = lr
+                optimizer.param_groups[2]["lr"] = lr
+            else:
+                optimizer.param_groups[0]["lr"] = lr
+                optimizer.param_groups[1]["lr"] = lr
 
             writer.add_scalar('lr', lr, iter_num)
             writer.add_scalar('loss/loss_bce_1', loss_bce_1, iter_num)
@@ -450,7 +456,13 @@ def train_prostate(trainloader_list, encoder, seg_decoder, rec_decoder, writer, 
             optimizer.step()
 
             lr = args.lr * (1 - iter_num / total_iters) ** 0.9
-            optimizer.param_groups[0]["lr"] = lr
+            if args.rec:
+                optimizer.param_groups[0]["lr"] = lr / 2
+                optimizer.param_groups[1]["lr"] = lr
+                optimizer.param_groups[2]["lr"] = lr
+            else:
+                optimizer.param_groups[0]["lr"] = lr
+                optimizer.param_groups[1]["lr"] = lr
 
             writer.add_scalar('lr', lr, iter_num)
             writer.add_scalar('loss/loss_ce_1', loss_ce_1, iter_num)
